@@ -41,12 +41,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Picasso.with(mContext).load(mRecipesBeans.get(position).getImage());
+        Picasso.with(mContext).load(mRecipesBeans.get(position).getImage()).into(viewHolder.recipeImage);
         viewHolder.titleTV.setText(mRecipesBeans.get(position).getTitle());
-        viewHolder.timeTV.setText(mRecipesBeans.get(position).getReadyInMinutes());
-        viewHolder.healthScoreTV.setText(Double.toString(mRecipesBeans.get(position).getHealthScore()));
-        viewHolder.scoreTV.setText(Double.toString(mRecipesBeans.get(position).getSpoonacularScore()));
-        viewHolder.likes.setText(mRecipesBeans.get(position).getAggregateLikes());
+        viewHolder.timeTV.setText(Integer.toString(mRecipesBeans.get(position).getReadyInMinutes()) + " mins");
+        double s = mRecipesBeans.get(position).getHealthScore();
+        String ss = Double.toString(s);
+        viewHolder.healthScoreTV.setText(ss + " Health Score");
+        double sss = mRecipesBeans.get(position).getSpoonacularScore();
+        String ssss = Double.toString(sss);
+        viewHolder.scoreTV.setText(ssss);
+        int s3 = mRecipesBeans.get(position).getAggregateLikes();
+        String s4 = Integer.toString(s3);
+        viewHolder.likes.setText(s4);
         viewHolder.sourceNameTV.setText(mRecipesBeans.get(position).getSourceName());
     }
 

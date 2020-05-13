@@ -10,7 +10,7 @@ public interface APIInterface {
     @GET("/recipes/{category}")
     Call<RecipeResult> listOfRecipes(
             @Path("category") String category,
-            @Query("number") String number,
+            @Query("number") int number,
             @Query("apiKey") String apiKey
     );
 }

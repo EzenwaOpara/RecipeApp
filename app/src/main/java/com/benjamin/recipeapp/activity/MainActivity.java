@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static String BASE_URL = "https://api.spoonacular.com";
     public static String API_KEY = "a9a1e45b82ea4acfba599fc9436e12b4";
     public static String CATEGORY = "random";
-    public static String NUMBER = "number";
+    public static int NUMBER = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
